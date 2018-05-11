@@ -1,6 +1,7 @@
-﻿<Window x:Class="ScoreKeeper.MainWindow"
+﻿<controls:MetroWindow x:Class="ScoreKeeper.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         Title="ScoreKeeper" Height="500" Width="750">
     <Grid>
         <Grid.RowDefinitions>
@@ -21,4 +22,5 @@
         </Menu>
         <ContentPresenter Grid.Row="1" x:Name="MainArea"></ContentPresenter>
     </Grid>
-</Window>
+</controls:MetroWindow>
+
