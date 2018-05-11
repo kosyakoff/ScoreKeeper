@@ -8,6 +8,7 @@
     Height="500"
     GlowBrush="{DynamicResource AccentColorBrush}"
     Icon="Resources/football48.png"
+    ResizeMode="CanResizeWithGrip"
     TitleCaps="False">
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands>
@@ -24,6 +25,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Menu
             Grid.Row="0"
@@ -40,6 +42,11 @@
         <ContentPresenter
             x:Name="MainArea"
             Grid.Row="1" />
+        <StatusBar Grid.Row="2">
+            <StatusBarItem>ScoreKeeper</StatusBarItem>
+            <Separator Style="{StaticResource MetroStatusBarSeparator}" />
+            <StatusBarItem>Some status message</StatusBarItem>
+        </StatusBar>
     </Grid>
 </controls:MetroWindow>
 
