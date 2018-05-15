@@ -63,6 +63,7 @@
         <!-- Starting 11 -->
         <Label Margin="5" Grid.Row="0" Grid.Column="2">Starting Eleven</Label>
         <ItemsControl Margin="5"
+                      x:Name="StartingElevenControl"
                       Grid.Row="1" Grid.Column="2" Grid.RowSpan="7" 
                       ItemsSource="{Binding StartingEleven}">
             <ItemsControl.ItemTemplate>
@@ -75,9 +76,14 @@
                         <TextBlock Margin="5,2" 
                                    Text="{Binding Number}" 
                                    HorizontalAlignment="Right"></TextBlock>
-                        <TextBox Margin="5,2" 
+                        <ComboBox Margin="5,2" 
+                                  IsEditable="True"
+                                  controls:TextBoxHelper.ClearTextButton="True"
+                                  controls:TextBoxHelper.Watermark="Full player name"
                                  Grid.Column="1" 
-                                 Text="{Binding Name, Mode=TwoWay}"></TextBox>
+                                  ItemsSource="{Binding Path=DataContext.StartingEleven, ElementName=StartingElevenControl}"
+                                  DisplayMemberPath="Name"
+                                  Text="{Binding Name, Mode=TwoWay}"></ComboBox>
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
